@@ -222,7 +222,8 @@ print(f"Eloignement maximum sur le graphe connexe : {eloignement_max(G_connexe)}
 print(f"Eloignement maximum sur le graphe non connexe : {eloignement_max(G_non_connexe)}") # renvoi : "Le graphe n'est pas connexe, distance maximum incalculable"
     
 # Tests avec Hollywood
-print("Tests avec Hollywood - 100")
+
+print("\n Tests avec Hollywood - 100")
 
 # Q1 - Échauffement
 
@@ -233,15 +234,15 @@ plt.show()
 # Q2 - Collaborateurs communs
 
 # Q3 - Collaborateurs proches
-print("Collaborateurs proches")
+print("\n Q3 - Collaborateurs proches")
 print(collaborateurs_proches(Hollywood, "Frank Oz", 2))
 print("Collaborateurs proches - Connexité")
 print(est_connexe(Hollywood))
 print("Collaborateurs proches - distance")
-print(distance(Hollywood, "Tony Roberts", "William Finley"))
+print(distance(Hollywood, "Tony Roberts", "Bernard Barrow"))
 
 # Q4 - Qui est au centre d'Hollywood ?
 
 # Q5 - Une petite famille
-print("Une petite Famille - eloignement_max")
+print("\n Q5 - Une petite Famille - eloignement_max")
 print(eloignement_max(Hollywood))
