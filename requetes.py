@@ -206,12 +206,42 @@ def eloignement_max(G):
     return max(distances)
 
 # Tests avec les graphes connexe et non connexe créé au début :
+#Q2
+
+#Q3
 print(f"Collaborateurs proches de B avec k = 2, dans le graphe connexe : {collaborateurs_proches(G_connexe, "B", 2)}") # doit renvoyer {'A', 'B', 'C', 'D', 'E'}
 print(f"Collaborateurs proches de H avec k = 3, dans le graphe non connexe : {collaborateurs_proches(G_non_connexe, "H", 3)}") # doit renvoyer {'G', 'H'}
 print(f"Graphe connexe pour le Graphe connexe : {est_connexe(G_connexe)}, Graphe connexe pour le graphe non connexe : {est_connexe(G_non_connexe)}") # renvoi True, False
 print(f"Distance entre les points A et H sur le graphe connexe : {distance(G_connexe, "A", "H")}") # renvoi 3
 print(f"Distance entre les points A et H sur le graphe non connexe : {distance(G_non_connexe, "A", "H")}") # renvoi : "Le graphe n'est pas connexe, distance incalculable"
+
+# Q4
+
+#Q5
 print(f"Eloignement maximum sur le graphe connexe : {eloignement_max(G_connexe)}") # renvoi : 6
 print(f"Eloignement maximum sur le graphe non connexe : {eloignement_max(G_non_connexe)}") # renvoi : "Le graphe n'est pas connexe, distance maximum incalculable"
     
 # Tests avec Hollywood
+print("Tests avec Hollywood - 100")
+
+# Q1 - Échauffement
+
+Hollywood = json_vers_nx('data_100.txt')
+nx.draw(Hollywood)
+plt.show()
+
+# Q2 - Collaborateurs communs
+
+# Q3 - Collaborateurs proches
+print("Collaborateurs proches")
+print(collaborateurs_proches(Hollywood, "Frank Oz", 2))
+print("Collaborateurs proches - Connexité")
+print(est_connexe(Hollywood))
+print("Collaborateurs proches - distance")
+print(distance(Hollywood, "Tony Roberts", "William Finley"))
+
+# Q4 - Qui est au centre d'Hollywood ?
+
+# Q5 - Une petite famille
+print("Une petite Famille - eloignement_max")
+print(eloignement_max(Hollywood))
