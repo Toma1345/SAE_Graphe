@@ -41,6 +41,22 @@ def nettoyageNoms(liste_noms):
         nettoyes.append(propre.strip())
     return nettoyes
 # Q1 - Échauffement
+def json_vers_nx(filename):
+    dico = {}
+    # Nettoyage du fichier et lecture de celui-ci
+    with open(filename, 'r') as file:
+        for line in file.readlines():
+            ligneConvertie = json.loads(line)
+            if ligneConvertie["cast"]:
+                dico[ligneConvertie["title"]] = nettoyageNoms(ligneConvertie["cast"])
+    # Création du graphe avec Networkx            
+    G = nx.Graph()
+    for casting in dico.values():
+        for u in casting:
+            for v in casting:
+                if u != v:
+                    G.add_edge(u, v)
+    return G
 
 # Q2 - Collaborateurs communs
 
