@@ -18,6 +18,7 @@ G_non_connexe.add_edges_from([("C", "B"), ("A", "B"), ("B", "D"), ("D", "E"), ("
 nx.draw(G_non_connexe)
 # plt.show()
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+
 def nettoyageNoms(liste_noms):
     """Fonction clarifiant les noms d'une liste de noms en supprimant les caractères inutiles
 
@@ -203,5 +204,14 @@ def eloignement_max(G):
             i+=1
         distances.append(i)
     return max(distances)
+
+# Tests avec les graphes connexe et non connexe créé au début :
+print(f"Collaborateurs proches de B avec k = 2, dans le graphe connexe : {collaborateurs_proches(G_connexe, "B", 2)}") # doit renvoyer {'A', 'B', 'C', 'D', 'E'}
+print(f"Collaborateurs proches de H avec k = 3, dans le graphe non connexe : {collaborateurs_proches(G_non_connexe, "H", 3)}") # doit renvoyer {'G', 'H'}
+print(f"Graphe connexe pour le Graphe connexe : {est_connexe(G_connexe)}, Graphe connexe pour le graphe non connexe : {est_connexe(G_non_connexe)}") # renvoi True, False
+print(f"Distance entre les points A et H sur le graphe connexe : {distance(G_connexe, "A", "H")}") # renvoi 3
+print(f"Distance entre les points A et H sur le graphe non connexe : {distance(G_non_connexe, "A", "H")}") # renvoi : "Le graphe n'est pas connexe, distance incalculable"
+print(f"Eloignement maximum sur le graphe connexe : {eloignement_max(G_connexe)}") # renvoi : 6
+print(f"Eloignement maximum sur le graphe non connexe : {eloignement_max(G_non_connexe)}") # renvoi : "Le graphe n'est pas connexe, distance maximum incalculable"
     
 # Tests avec Hollywood
