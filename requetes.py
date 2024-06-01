@@ -226,7 +226,7 @@ print(f"Eloignement maximum sur le graphe non connexe : {eloignement_max(G_non_c
 print("\n Tests avec Hollywood - 100")
 
 # Q1 - Échauffement
-
+print("\n Affichage graphe ...")
 Hollywood = json_vers_nx('data_100.txt')
 nx.draw(Hollywood)
 plt.show()
@@ -235,14 +235,14 @@ plt.show()
 
 # Q3 - Collaborateurs proches
 print("\n Q3 - Collaborateurs proches")
-print(collaborateurs_proches(Hollywood, "Frank Oz", 2))
+print(f"Collaborateurs proches de Frank Oz avec k = 2 : {collaborateurs_proches(Hollywood, 'Frank Oz', 2)}")
 print("Collaborateurs proches - Connexité")
-print(est_connexe(Hollywood))
+print(f"Le graphe Hollywood est connexe ? : {est_connexe(Hollywood)}")
 print("Collaborateurs proches - distance")
-print(distance(Hollywood, "Tony Roberts", "Bernard Barrow"))
+print(f"Distance entre Tony Roberts et Bernard Barrow : {distance(Hollywood, 'Tony Roberts', 'Bernard Barrow')}")
 
 # Q4 - Qui est au centre d'Hollywood ?
 
 # Q5 - Une petite famille
 print("\n Q5 - Une petite Famille - eloignement_max")
-print(eloignement_max(Hollywood))
+print(f"Eloignement maximum sur le graphe d'Hollywood : {eloignement_max(Hollywood)}")
