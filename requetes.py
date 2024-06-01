@@ -18,7 +18,28 @@ G_non_connexe.add_edges_from([("C", "B"), ("A", "B"), ("B", "D"), ("D", "E"), ("
 nx.draw(G_non_connexe)
 # plt.show()
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+def nettoyageNoms(liste_noms):
+    """Fonction clarifiant les noms d'une liste de noms en supprimant les caractères inutiles
 
+    Args:
+        liste_noms (list): liste des noms à nettoyer
+
+    Returns:
+        dict : liste des noms sans les caractères parasites
+    """
+    nettoyes = []
+    for nom in liste_noms:
+        sansCrochets = nom.replace('[', '').replace(']', '').replace("'", '')
+        index = len(sansCrochets)
+        if "(" in sansCrochets:
+            index = min(index, sansCrochets.index("("))
+        if "<" in sansCrochets:
+            index = min(index, sansCrochets.index("<"))
+        if "|" in sansCrochets:
+            index = min(index, sansCrochets.index("|"))
+        propre = sansCrochets[:index]
+        nettoyes.append(propre.strip())
+    return nettoyes
 # Q1 - Échauffement
 
 # Q2 - Collaborateurs communs
