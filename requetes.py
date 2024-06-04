@@ -236,6 +236,8 @@ plt.show()
 # Q3 - Collaborateurs proches
 print("\n Q3 - Collaborateurs proches")
 print(f"Collaborateurs proches de Frank Oz avec k = 2 : {collaborateurs_proches(Hollywood, 'Frank Oz', 2)}")
+print(f"Test distance naïve : {distance_naive(G_connexe,'A','H')}")
+print(f"Test distance naïve : {distance_naive(G_non_connexe,'A','H')}")
 print("Collaborateurs proches - Connexité")
 print(f"Le graphe Hollywood est connexe ? : {est_connexe(Hollywood)}")
 print("Collaborateurs proches - distance")
