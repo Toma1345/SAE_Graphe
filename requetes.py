@@ -69,6 +69,26 @@ def json_vers_nx(filename):
     return G
 
 # Q2 - Collaborateurs communs
+def collaborateurs_communs(G,u,v):
+    """Fonction de recherche déterminant quels sont les acteurs qui ont collaboré avec les deux acteurs en paramètre.
+    
+    Parametres:
+        G: le graphe
+        u: acteur (sommet)
+        v: acteur (sommet)
+        
+    Returns:
+        set : liste des noms des acteurs ayant déjà travaillé avec les deux acteurs placés en paramètre
+    """
+    if u not in G.nodes:
+        return u + " est inconnu"
+    if v not in G.nodes:
+        return v + " est inconnu"
+    collaborateurs_en_commun = set()
+    for collaborateur in G[u]:
+        if collaborateur in G[v]:
+            collaborateurs_en_commun.add(collaborateur)
+    return collaborateurs_en_commun
 
 # Q3 - Collaborateurs proches
 def collaborateurs_proches(G,u,k):
