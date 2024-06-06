@@ -300,7 +300,11 @@ print("Collaborateurs proches - distance")
 print(f"Distance entre Tony Roberts et Bernard Barrow : {distance(Hollywood, 'Tony Roberts', 'Bernard Barrow')}")
 
 # Q4 - Qui est au centre d'Hollywood ?
-
+print("\n Q4 - Qui est au centre d'Hollywood ? - centralite")
+print(f"Distance entre Frank Oz et l'acteur le plus éloigné : {centralite(Hollywood, 'Frank Oz')}")
+print(f"Distance entre Tony Roberts et l'acteur le plus éloigné : {centralite(Hollywood, 'Tony Roberts')}")
+print("\n Q4 - Qui est au centre d'Hollywood ? - centre Hollywood")
+print(f"Centre d'Hollywood : {centre_hollywood(Hollywood)}")
 # Q5 - Une petite famille
 print("\n Q5 - Une petite Famille - eloignement_max")
 print(f"Eloignement maximum sur le graphe d'Hollywood : {eloignement_max(Hollywood)}")
