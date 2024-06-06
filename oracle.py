@@ -68,3 +68,5 @@ def start(nom_data) :
             plus_loin = rqt.centralite(hollywood, actor)
             print(f"La personne la plus éloignée de {actor} est éloignée de {plus_loin} personnes")
     return "Bonne journée à vous !"
+
+start('data_10000.txt')
