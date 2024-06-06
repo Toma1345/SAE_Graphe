@@ -272,7 +272,33 @@ print("Collaborateurs proches - distance")
 print(f"Distance entre Tony Roberts et Bernard Barrow : {distance(Hollywood, 'Tony Roberts', 'Bernard Barrow')}")
 
 # Q4 - Qui est au centre d'Hollywood ?
-
+def centralite(G,u):
+    """Fonction déterminant la distance entre un acteur et l'acteur le plus éloigné de lui d'un graphe donné
+    
+    Args:
+        G (graph): graphe des acteurs
+        u (str): nom de l'acteur dont on veut déterminer la centralité
+        
+    Returns:
+        int : centralité de l'acteur
+    """
+    if not est_connexe(G):
+        return "Le graphe n'est pas connexe, centralité incalculable."
+    return distance(G, u, max(G.nodes, key=lambda node : distance(G, u, node)))
+    
+def centre_hollywood(G):
+    """Fonction déterminant l'acteur le plus central d'un graphe
+    
+    Args:
+        G (graph): graphe d'acteurs
+    
+    Returns:
+        str : nom de l'acteur le plus central
+    """
+    if not est_connexe(G):
+        return "Le graphe n'est pas connexe, centralité incalculable."
+    centralites = {acteur : centralite(G, acteur) for acteur in G.nodes}
+    return min(centralites, key=lambda acteur : centralites[acteur])
 # Q5 - Une petite famille
 print("\n Q5 - Une petite Famille - eloignement_max")
 print(f"Eloignement maximum sur le graphe d'Hollywood : {eloignement_max(Hollywood)}")
