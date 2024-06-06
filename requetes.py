@@ -286,7 +286,9 @@ nx.draw(Hollywood)
 plt.show()
 
 # Q2 - Collaborateurs communs
-
+print("\n Q2 - Collaborateurs en communs")
+print(f"Collaborateurs en commun entre 'Tony Roberts' et 'Bernard Barrow' : {collaborateurs_communs(Hollywood, 'Tony Roberts', 'Bernard Barrow')}")
+print(f"Collaborateurs en commun entre 'John Randolph' et 'Al Pacino' : {collaborateurs_communs(Hollywood, 'John Randolph', 'Al Pacino')}")
 # Q3 - Collaborateurs proches
 print("\n Q3 - Collaborateurs proches")
 print(f"Collaborateurs proches de Frank Oz avec k = 2 : {collaborateurs_proches(Hollywood, 'Frank Oz', 2)}")
