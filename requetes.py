@@ -206,20 +206,28 @@ def eloignement_max(G):
     return max(distances)
 
 # Tests avec les graphes connexe et non connexe créé au début :
-#Q2
+#Q2 - Assert
+assert collaborateurs_communs(G_connexe, 'E', 'H') == {'J', 'F'}
+assert collaborateurs_communs(G_non_connexe, 'E', 'H') == set()
+#Q3 - Assert
+assert collaborateurs_proches(G_connexe, 'B', 2) == {'A', 'B', 'C', 'D', 'E'}
+assert collaborateurs_proches(G_non_connexe, 'H', 3) == {'G', 'H'}
+assert est_connexe(G_connexe)
+assert not (est_connexe(G_non_connexe))
+assert distance(G_connexe, 'A', 'H') == 3
+assert distance(G_non_connexe, 'A', 'H') == "Le graphe n'est pas connexe, distance incalculable."
+assert distance_naive(G_connexe,'A','H') == 3
+assert distance_naive(G_non_connexe,'A','H') == None
+#Q4 - Assert
+assert centralite(G_connexe, 'E') == 3
+assert centralite(G_connexe, 'H') == 5
+assert centralite(G_non_connexe, 'H') == "Le graphe n'est pas connexe, centralité incalculable."
 
-#Q3
-print(f"Collaborateurs proches de B avec k = 2, dans le graphe connexe : {collaborateurs_proches(G_connexe, "B", 2)}") # doit renvoyer {'A', 'B', 'C', 'D', 'E'}
-print(f"Collaborateurs proches de H avec k = 3, dans le graphe non connexe : {collaborateurs_proches(G_non_connexe, "H", 3)}") # doit renvoyer {'G', 'H'}
-print(f"Graphe connexe pour le Graphe connexe : {est_connexe(G_connexe)}, Graphe connexe pour le graphe non connexe : {est_connexe(G_non_connexe)}") # renvoi True, False
-print(f"Distance entre les points A et H sur le graphe connexe : {distance(G_connexe, "A", "H")}") # renvoi 3
-print(f"Distance entre les points A et H sur le graphe non connexe : {distance(G_non_connexe, "A", "H")}") # renvoi : "Le graphe n'est pas connexe, distance incalculable"
-
-# Q4
-
-#Q5
-print(f"Eloignement maximum sur le graphe connexe : {eloignement_max(G_connexe)}") # renvoi : 6
-print(f"Eloignement maximum sur le graphe non connexe : {eloignement_max(G_non_connexe)}") # renvoi : "Le graphe n'est pas connexe, distance maximum incalculable"
+assert centre_hollywood(G_connexe) == "E"
+assert centre_hollywood(G_non_connexe) == "Le graphe n'est pas connexe, centralité incalculable."
+#Q5 - Assert
+assert eloignement_max(G_connexe) == 6
+assert eloignement_max(G_non_connexe) == "Le graphe n'est pas connexe, distance maximum incalculable."
     
 # Tests avec Hollywood
 
