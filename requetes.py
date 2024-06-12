@@ -54,7 +54,7 @@ def json_vers_nx(filename):
     """
     dico = {}
     # Nettoyage du fichier et lecture de celui-ci
-    with open(filename, 'r') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         for line in file.readlines():
             ligneConvertie = json.loads(line)
             if ligneConvertie["cast"]:
