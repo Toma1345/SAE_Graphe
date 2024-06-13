@@ -273,7 +273,7 @@ assert centre_hollywood(G_connexe) == "E"
 assert centre_hollywood(G_non_connexe) == "Le graphe n'est pas connexe, centralité incalculable."
 #Q5 - Assert
 assert eloignement_max(G_connexe) == 6
-assert eloignement_max(G_non_connexe) == "Le graphe n'est pas connexe, distance maximum incalculable."
+assert eloignement_max(G_non_connexe) == "Le graphe n'est pas connexe, distance maximum incalculable"
     
 # Tests avec Hollywood
 
